@@ -25,4 +25,12 @@
     <servlet-name>JoinServlet</servlet-name>
     <url-pattern>/js</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.servlet.Control.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
 </web-app>

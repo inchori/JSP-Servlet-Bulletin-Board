@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 import com.servlet.DAO.UserDAO;
 import com.servlet.DTO.UserDTO;
@@ -17,6 +18,7 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
 		String ID = request.getParameter("userID");
 		String Password = request.getParameter("userPassword");
 		
@@ -27,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 			userDTO.setUserPassword(Password);
 			int result = userDAO.login(userDTO.getUserID(), userDTO.getUserPassword());
 			if (result == 1) {
+				request.getSession().setAttribute("userID", userDTO.getUserID());
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("location.href= 'main.jsp'");

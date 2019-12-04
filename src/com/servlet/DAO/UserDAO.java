@@ -30,7 +30,7 @@ public class UserDAO {
 		
 		try {
 			con = datasource.getConnection();
-			String SQL = "SELECT userPassword FROM BBSUSER WHERE userID = ?";
+			String SQL = "SELECT USERPASSWORD FROM BBSUSER WHERE USERID = ?";
 			pstmt = con.prepareStatement(SQL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();

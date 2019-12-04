@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.servlet.DAO.UserDAO;
 import com.servlet.DTO.UserDTO;
 
-@WebServlet("/JS")
 public class JoinServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,8 +24,7 @@ public class JoinServlet extends HttpServlet {
 			String Gender = request.getParameter("userGender");
 			String Email = request.getParameter("userEmail");
 			UserDTO userDTO = new UserDTO();
-			if(userDTO.getUserID() == null || userDTO.getUserPassword() == null || userDTO.getUserName() == null ||
-					userDTO.getUserGender() == null || userDTO.getUserEmail() == null) {
+			if(ID == null || Password == null || Name == null ||Gender == null || Email == null) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('Please Fill out your Form!')");
@@ -34,6 +32,11 @@ public class JoinServlet extends HttpServlet {
 				script.println("</script>");
 			} else {
 				UserDAO userDAO = new UserDAO();
+				userDTO.setUserID(ID);
+				userDTO.setUserPassword(Password);
+				userDTO.setUserName(Name);
+				userDTO.setUserGender(Gender);
+				userDTO.setUserEmail(Email);
 				int result = userDAO.join(userDTO);
 				if (result == -1) {
 					PrintWriter script = response.getWriter();
@@ -41,7 +44,8 @@ public class JoinServlet extends HttpServlet {
 					script.println("alert('Already Sign Up!')");
 					script.println("history.back()");
 					script.println("</script>");
-				} else if (result == 0) {
+				} else {
+					request.getSession().setAttribute("userID", userDTO.getUserID());
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("location.href = 'main.jsp'");
