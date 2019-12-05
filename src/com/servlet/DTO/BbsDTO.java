@@ -1,6 +1,6 @@
 package com.servlet.DTO;
 
-public class BbsDTO {
+public class BBSDTO {
 	private int bbsID;
 	private String bbsTitle;
 	private String userID;

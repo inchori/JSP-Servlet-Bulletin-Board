@@ -33,4 +33,20 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>CanWriteServlet</servlet-name>
+    <servlet-class>com.servlet.Control.CanWriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CanWriteServlet</servlet-name>
+    <url-pattern>/CanWrite</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WriteServlet</servlet-name>
+    <servlet-class>com.servlet.Control.WriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WriteServlet</servlet-name>
+    <url-pattern>/write</url-pattern>
+  </servlet-mapping>
 </web-app>
