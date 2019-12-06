@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -66,24 +67,43 @@
 		</nav>
 		<div class="container">
 			<div class="row">
-			<form method="post" action="./write">
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
+							<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시판 글보기</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
+							<td style="width: 20%;">글 제목</td>
+							<td colspan="2">${BBS.bbsTitle}</td>
 						</tr>
 						<tr>
-							<td><textarea type="text" class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>							
+							<td>작성자</td>
+							<td colspan="2">${BBS.userID}</td>						
+						</tr>
+						<tr>
+							<td>작성일자</td>
+							<td colspan="2">${BBS.bbsDate}</td>						
+						</tr>
+						<tr>
+							<td>내용</td>
+							<td colspan="2" style="height: 200px; text-align: left;">${BBS.bbsContent}</td>						
 						</tr>
 					</tbody>
 				</table>
-				<input type="submit"class="btn btn-primary pull-right" value="글쓰기">
-			</form>
+				<a href="./list" class="btn btn-primary">목록</a>
+				<c:set var="str" value="${BBS.userID}"/>
+				<%
+					String str = (String) pageContext.getAttribute("str");
+					System.out.println(str);
+					if(str.equals(userID)) {
+				%>
+					<a href="modify?bbsID=${BBS.bbsID}" class="btn btn-primary">수정</a>
+					<a href="delete?bbsID=${BBS.bbsID}" class="btn btn-primary">삭제</a>
+				<%
+					}
+				%>
 			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

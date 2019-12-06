@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
+<%@	taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,7 +32,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="main.jsp">메인</a></li>
-					<li class="active"><a href="bbs.jsp">게시판</a></li>
+					<li class="active"><a href="./list">게시판</a></li>
 				</ul>
 				<%
 					if(userID == null) {
@@ -76,15 +78,17 @@
 						</tr>
 					</thead>
 					<tbody>
+					<c:forEach items="${BBS_list}" var="list">
 						<tr>
-							<td>1</td>
-							<td>안녕하세요</td>
-							<td>홍길동</td>
-							<td>2019-12-04</td>
+							<td>${list.bbsID}</td>
+							<td><a href="./view?bbsID=${list.bbsID}">${list.bbsTitle}</a></td>
+							<td>${list.userID}</td>
+							<td>${list.bbsDate}</td>
 						</tr>
+					</c:forEach>
 					</tbody>
 				</table>
-				<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
+				<a href="./CanWrite" class="btn btn-primary pull-right">글쓰기</a>
 			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

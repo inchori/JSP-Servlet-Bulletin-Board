@@ -38,7 +38,7 @@ public class WriteServlet extends HttpServlet {
 				bbsDTO.setBbsTitle(Title);
 				bbsDTO.setBbsContent(Content);
 				int result = bbsDAO.write(Title, User, Content);
-				System.out.println(result);
+				//System.out.println(result);
 				if (result == -1) {
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
@@ -49,7 +49,7 @@ public class WriteServlet extends HttpServlet {
 				else {
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-					script.println("location.href = 'bbss.jsp'");
+					script.println("location.href = './list'");
 					script.println("</script>");
 				}
 			}

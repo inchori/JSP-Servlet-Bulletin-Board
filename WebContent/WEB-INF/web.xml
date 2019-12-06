@@ -49,4 +49,28 @@
     <servlet-name>WriteServlet</servlet-name>
     <url-pattern>/write</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ListServlet</servlet-name>
+    <servlet-class>com.servlet.Control.ListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListServlet</servlet-name>
+    <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewServlet</servlet-name>
+    <servlet-class>com.servlet.Control.ViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewServlet</servlet-name>
+    <url-pattern>/view</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModifyServlet</servlet-name>
+    <servlet-class>com.servlet.Control.ModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyServlet</servlet-name>
+    <url-pattern>/modify</url-pattern>
+  </servlet-mapping>
 </web-app>
