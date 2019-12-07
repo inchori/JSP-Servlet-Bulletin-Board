@@ -73,4 +73,12 @@
     <servlet-name>ModifyServlet</servlet-name>
     <url-pattern>/modify</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>com.servlet.Control.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
 </web-app>

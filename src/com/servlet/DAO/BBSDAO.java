@@ -54,7 +54,7 @@ public class BBSDAO {
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 		return -1;
 	}
 	
@@ -150,6 +150,19 @@ public class BBSDAO {
 			pstmt.setString(1, bbsTitle);
 			pstmt.setString(2, bbsContent);
 			pstmt.setInt(3, bbsID);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int delete(int bbsID) {
+		try {
+			con = datasource.getConnection();
+			String SQL = "DELETE FROM BBS WHERE BBSID =?";
+			PreparedStatement pstmt = con.prepareStatement(SQL);
+			pstmt.setInt(1, bbsID);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

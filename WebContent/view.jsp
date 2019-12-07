@@ -96,11 +96,10 @@
 				<c:set var="str" value="${BBS.userID}"/>
 				<%
 					String str = (String) pageContext.getAttribute("str");
-					System.out.println(str);
 					if(str.equals(userID)) {
 				%>
 					<a href="modify?bbsID=${BBS.bbsID}" class="btn btn-primary">수정</a>
-					<a href="delete?bbsID=${BBS.bbsID}" class="btn btn-primary">삭제</a>
+					<a href="delete?bbsID=${BBS.bbsID}" type="submit" class="btn btn-primary">삭제</a>
 				<%
 					}
 				%>
