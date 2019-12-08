@@ -10,7 +10,7 @@ Review Object-oriented Paradigm.
 
 * Java Version : Java Version 1.8.0_181
 * Server : Apache Tomcat v8.5
-* DataBase : Oracle DB 18c Express
+* DataBase : Oracle DB 18c Express Edition
 
 ## Source & Link
 
@@ -27,7 +27,7 @@ Review Object-oriented Paradigm.
 
 1. Import Project
 2. Server Setting
-3. Run As to ``index.jsp                      ``
+3. Run As to ``index.jsp``
 
 ## Next RoadMap
 
