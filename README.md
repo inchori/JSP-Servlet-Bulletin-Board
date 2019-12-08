@@ -4,7 +4,7 @@ Try to develop a bulletin board by JSP/Servlet, Apache, OracleDB.
 
 ## Motivation
 
-Review Object-orinted Paradigm
+Review Object-oriented Paradigm.
 
 ## Dev Environment
 
@@ -27,7 +27,7 @@ Review Object-orinted Paradigm
 
 1. Import Project
 2. Server Setting
-3. Run As to ``index.jsp``
+3. Run As to ``index.jsp                      ``
 
 ## Next RoadMap
 
