@@ -10,6 +10,7 @@ Review Object-orinted Paradigm
 
 * Java Version : Java Version 1.8.0_181
 * Server : Apache Tomcat v8.5
+* DataBase : Oracle DB 18c Express
 
 ## Source & Link
 
@@ -18,12 +19,15 @@ Review Object-orinted Paradigm
 
 ## Difference
 
-* JSP --> JSP/Servlet(MVC)
+* JSP --> JSP/Servlet (MVC)
+* MySQL --> Oracle DB
+* JDBC --> Use Connection Pool
 
 ## Installation
 
 1. Import Project
-2. Run As to ``index.jsp``
+2. Server Setting
+3. Run As to ``index.jsp``
 
 ## Next RoadMap
 
