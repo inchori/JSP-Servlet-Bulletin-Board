@@ -31,4 +31,4 @@ Review Object-oriented Paradigm.
 
 ## Next RoadMap
 
-* Spring Framework --> Spring MVC Toy Project --> Golang --> Rust
+* Spring Framework --> Spring Boot REST API Team Project --> Golang Toy Project --> Rust
